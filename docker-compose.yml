@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - db
+      - mailhog
+    restart: always
+    env_file:
+      - .env
+
+
+  db:
+    image: mysql:8.3.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mi_basedatos
+      MYSQL_USER: usuario
+      MYSQL_PASSWORD: contraseña
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./docker:/docker-entrypoint-initdb.d
+    command: >
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_unicode_ci
+
+  phpmyadmin:
+    image: phpmyadmin:5.2.1-apache
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: root
+      PMA_CHARSET: utf8mb4
+
+  mailhog:
+    image: mailhog/mailhog
+    restart: always
+    ports:
+      - "8025:8025"  # Web UI to view emails
+      - "1025:1025"  # SMTP port
+
+volumes:
+  db_data:
