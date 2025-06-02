@@ -1,4 +1,4 @@
-USE railway;
+USE mi_basedatos;
 SET NAMES utf8mb4;
 
 -- Script de creación de la base de datos para una plataforma de reservas de alojamientos.
