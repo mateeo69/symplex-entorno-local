@@ -1,0 +1,76 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "fakehashwithstripeandphpmailer",
+    "packages": [
+        {
+            "name": "phpmailer/phpmailer",
+            "version": "v6.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPMailer/PHPMailer.git",
+                "reference": "bf74d75a1fde6beaa34a0ddae2ec5fce0f72a144"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/bf74d75a1fde6beaa34a0ddae2ec5fce0f72a144",
+                "reference": "bf74d75a1fde6beaa34a0ddae2ec5fce0f72a144",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ctype": "*",
+                "ext-filter": "*",
+                "ext-hash": "*",
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPMailer\\PHPMailer\\": "src/"
+                }
+            },
+            "license": [
+                "LGPL-2.1-only"
+            ],
+            "description": "PHPMailer is a full-featured email creation and transfer class for PHP"
+        },
+        {
+            "name": "stripe/stripe-php",
+            "version": "v12.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stripe/stripe-php.git",
+                "reference": "somecommitsha"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/somecommitsha",
+                "reference": "somecommitsha",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Stripe\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Stripe PHP SDK"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {},
+    "plugin-api-version": "2.6.0"
+}

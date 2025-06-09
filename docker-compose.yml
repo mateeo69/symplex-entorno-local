@@ -16,7 +16,6 @@ services:
     env_file:
       - .env
 
-
   db:
     image: mysql:8.3.0
     restart: always
@@ -48,8 +47,8 @@ services:
     image: mailhog/mailhog
     restart: always
     ports:
-      - "8025:8025"  # Web UI to view emails
-      - "1025:1025"  # SMTP port
+      - "8025:8025"
+      - "1025:1025"
 
 volumes:
   db_data:
